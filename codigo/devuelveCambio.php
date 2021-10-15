@@ -5,71 +5,65 @@
 //número mínimo de monedas con las que puedes devolver el cambio.
 
 
-$precio = 6.33;
+$precio = (int)($_GET["precio"]*100);
+// $precio= $precio+0;
 
-$pago = 10;
-// $pago = $_GET("pago");
+
+$pago = (int)($_GET["pago"]*100);
+// $pago = $pago + 0;
 $contador=0;
 
 $devolucion=$pago-$precio;
 
 
 if($devolucion>=0){
-    if($devolucion>0){
-        while($devolucion>=2){
-            $contador++;
-            echo "Moneda 2 euros ";
-            echo "<br>";
-            $devolucion-=2;
-        }
-        while($devolucion>=1){
-            $contador++;
-            echo "Moneda 1 euro ";
-            echo "<br>";
-            $devolucion-=1;
-        }
-        while($devolucion>=0.5){
-            $contador++;
-            echo "Moneda 50 cent ";
-            echo "<br>";
-            $devolucion-=0.50;
-        }
-        while($devolucion>=0.2){
-            $contador++;
-            echo "Moneda 20 cent ";
-            echo "<br>";
-            $devolucion-=0.20;
-        }
-        while($devolucion>=0.1){
-            $contador++;
-            echo "Moneda 10 cent ";
-            echo "<br>";
-            $devolucion-=0.10;
-        }
-        while($devolucion>=0.1){
-            $contador++;
-            echo "Moneda 10 cent ";
-            echo "<br>";
-            $devolucion-=0.10;
-        }
-        while($devolucion>=0.05){
-            $contador++;
-            echo "Moneda 5 cent ";
-            echo "<br>";
-            $devolucion-=0.05;
-        }
-        while($devolucion>=0.02){
-            $contador++;
-            echo "Moneda 2 cent ";
-            echo "<br>";
-            $devolucion-=0.02;
-        }
-        while($devolucion>=0.01){
-            $contador++;
-            echo "Moneda 1 cent ";
-            echo "<br>";
-            $devolucion-=0.01;
-        }
+    while($devolucion>=200){
+        $contador++;
+        echo "Moneda 2 euros ";
+        echo "<br>";
+        $devolucion-=200;
+    }
+    while($devolucion>=100){
+        $contador++;
+        echo "Moneda 1 euro ";
+        echo "<br>";
+        $devolucion-=100;
+    }
+    while($devolucion>=50){
+        $contador++;
+        echo "Moneda 50 cent ";
+        echo "<br>";
+        $devolucion-=50;
+    }
+    while($devolucion>=20){
+        $contador++;
+        echo "Moneda 20 cent ";
+        echo "<br>";
+        $devolucion-=20;
+    }
+    while($devolucion>=10){
+        $contador++;
+        echo "Moneda 10 cent ";
+        echo "<br>";
+        $devolucion-=10;
+    }    
+    while($devolucion>=5){
+        $contador++;
+        echo "Moneda 5 cent ";
+        echo "<br>";
+        $devolucion-=5;
+    }
+    while($devolucion>=2){
+        $contador++;
+        echo "Moneda 2 cent ";
+        echo "<br>";
+        $devolucion-=2;
+    }
+    while($devolucion>=1){
+        $contador++;
+        echo "Moneda 1 cent ";
+        echo "<br>";
+        $devolucion-=1;
     }
 }else{
     echo "Cantidad insuficiente";
