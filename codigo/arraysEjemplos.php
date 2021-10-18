@@ -47,7 +47,57 @@ foreach ($notas as $value) {
     echo "<p>".$value."</p>";
 }
 
+//arrays con clave valor
+$notasAso = array(
+    "David" =>8,
+    "Ismael" =>9,
+    "Uriel" =>6,
+    "Ivan" =>10,
+    "Aaron" =>7,
+    "Hector" =>4);
 
+echo "<pre>";
+print_r($notasAso);
+echo "</pre>";
+
+//cambiar un valor de forma permanente a todo el array
+foreach ($notasAso as $key => $value) {
+    $notasAso[$key]++;
+}
+//visualizar
+echo "<pre> Despues de incrementar";
+print_r($notasAso);
+echo "</pre>";
+
+//Multidimensionales    [][]
+echo "<h2>MULTIDIMENSIONALES</h2>";
+$tabla = array();
+for ($i=0; $i <=10 ; $i++) { 
+    $tabla[$i]=array();
+    for ($j=0; $j <=10 ; $j++) { 
+        $tabla[$i][$j]=$i*$j;
+    }
+}
+echo "<pre> tabla";
+print_r($tabla);
+echo "</pre>";
+
+//Otro ejemplo de array
+$ciclos = array(
+    "DAW" => array("PR" =>"Programación",
+        "BD" =>"Bases de Datos",
+        "DWES" =>"Desarrollo web en entorno servidor"),
+    "DAM" => array("PR" =>"Programación",
+        "BD" =>"Bases de Datos",
+        "PMDM" =>"Programación multimedia y de dispositivos móviles")
+);
+//visualizacion 
+foreach ($ciclos as $key1 => $value1) {
+    echo"<p>".$key1."</p>";
+    foreach ($value1 as $key2 => $value2) {
+        echo"<p>".$value2."</p>";
+    }
+}
 ?>
 <br>
 <a href="codigo.php?paginaPHP=<?$pagina = basename($_SERVER['SCRIPT_FILENAME']);echo $pagina;?>">Ver el codigo</a>
