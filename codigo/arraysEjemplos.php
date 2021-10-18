@@ -95,7 +95,7 @@ $ciclos = array(
 foreach ($ciclos as $key1 => $value1) {
     echo"<p>".$key1."</p>";
     foreach ($value1 as $key2 => $value2) {
-        echo"<p>".$value2."</p>";
+        echo"<p>".$key2.":".$value2."</p>";
     }
 }
 ?>
