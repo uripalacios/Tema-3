@@ -89,7 +89,7 @@ $ciclos = array(
         "DWES" =>"Desarrollo web en entorno servidor"),
     "DAM" => array("PR" =>"Programación",
         "BD" =>"Bases de Datos",
-        "PMDM" =>"Programación multimedia y de dispositivos móviles")
+        "PMDM" =>"Programación multimedia y de dispositivos móviles")  
 );
 //visualizacion 
 foreach ($ciclos as $key1 => $value1) {
@@ -97,6 +97,47 @@ foreach ($ciclos as $key1 => $value1) {
     foreach ($value1 as $key2 => $value2) {
         echo"<p>".$key2.":".$value2."</p>";
     }
+}
+//recorrer el array $ciclos
+echo "<h1>Funciones para recorrer</h1>";
+$ciclos = array(
+    "DAW" => array("PR" =>"Programación",
+        "BD" =>"Bases de Datos",
+        "DWES" =>"Desarrollo web en entorno servidor"),
+    "DAM" => array("PR" =>"Programación",
+        "BD" =>"Bases de Datos",
+        "PMDM" =>"Programación multimedia y de dispositivos móviles"),
+    "ASIR" => array("ASO" =>"Sistemas Operativos",
+        "BD" =>"Bases de Datos",
+        "PLAR" =>"Redes")
+);
+echo"current<br>";
+print_r(current($ciclos));
+echo "<br>next<br>";
+print_r(next($ciclos));
+echo"<br>current<br>";
+echo"<pre>";
+print_r(current($ciclos));
+echo"</pre>";
+
+while ($ciclo = each($ciclos)) {
+    echo"<pre>";
+    echo "El ciclo es: ".$ciclo['key']." y las asignaturas son: ";
+    print_r($ciclo['value']);
+    echo"</pre>";
+}
+//no funciona porque ya estaba en la ultima posicion tra recorrerlo con each
+echo"<pre>";
+print_r(current($ciclos));
+echo"</pre>";
+//reiniciar el array
+echo "<p>Array reiniciado</p>";
+reset($ciclos);
+while ($ciclo = each($ciclos)) {
+    echo"<pre>";
+    echo "El ciclo es: ".$ciclo['key']." y las asignaturas son: ";
+    print_r($ciclo['value']);
+    echo"</pre>";
 }
 ?>
 <br>
