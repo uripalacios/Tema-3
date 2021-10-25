@@ -31,8 +31,10 @@
         br();
         br();
         echo "Funcion que me imprime en h1";
+        h1("Hola");
+        echo "Funcion que imprime un parrafo";
+        p("Este es mi nuevo parrafo");
         
-
     ?>
     
     </main>
