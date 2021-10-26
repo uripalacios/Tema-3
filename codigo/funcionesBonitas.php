@@ -12,7 +12,8 @@ function p($cadena){
     echo "<p>".$cadena."</p>";
 }
 function letraDni($numeroDni){
-    $compruevaLetra=array();
-
+    $compruevaLetra=array("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E");
+    $numeroDni=$numeroDni%23;
+    echo $compruevaLetra[$numeroDni];
 }
 ?>

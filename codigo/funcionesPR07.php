@@ -34,7 +34,8 @@
         h1("Hola");
         echo "Funcion que imprime un parrafo";
         p("Este es mi nuevo parrafo");
-        
+        echo "La letra del Dni 71031234 es: ";
+        letraDni(71031234);
     ?>
     
     </main>
