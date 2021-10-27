@@ -16,4 +16,7 @@ function letraDni($numeroDni){
     $numeroDni=$numeroDni%23;
     echo $compruevaLetra[$numeroDni];
 }
+function self(){
+    echo $_SERVER['PHP_SELF'];
+}
 ?>
