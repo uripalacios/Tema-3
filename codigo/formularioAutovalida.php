@@ -19,7 +19,7 @@
             // {
             //     p("El formulario ha sido enviado");
             // }
-            if(isset($_POST['Enviado'])){
+          /*  if(isset($_POST['Enviado'])){
                 p("El formulario ha sido enviado");
                 if(!empty($_POST['nombre'])){
                     p("El nombre es ".$_POST['nombre']);
@@ -33,9 +33,29 @@
                 if($_POST['ciclo']=="no"){
                     p("Debe seleccionar un ciclo");
                 }
-            }
+                if(!isset($_POST['aficiones'])){
+                    p("No ha elegido ninguna aficion");
+                }elseif(count($_POST['aficiones'])>3){
+                    p("Debe elegir como mucho 3");
+                }
+                //La variable superglobal que guarda los ficheros es $_FILES
+                //print_r($_FILES);
+                if(isset($_FILES)){
+                $guarda = "../uploads/";
+                $rutaConNombre = $guarda . $_FILES['fichero']['name'];
+                if(move_uploaded_file($_FILES['fichero']['tmp_name'],$rutaConNombre)){
+                    p("Guardado");
+                }else{
+                    p("Error");
+                }
+                }
+            }*/
+
+            if(isset($_POST['Enviado'])){
+                p("Has puesto todo correcto");
+            }else{
         ?>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="formulario">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="formulario" enctype="multipart/form-data">
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre">
             <br>
@@ -63,9 +83,14 @@
             <input type="checkbox" name="aficiones[]" id="dormir" value="dormir">
             <label for="dormir">dormir</label>
             <br>
+            <input type="file" name="fichero" id="fichero">
+            <br>
             <input type="submit" value="Enviar" name="Enviado">
             <input type="reset" value="Limpiar">
         </form>
+        <?php
+            }
+        ?>
     </main>
     <br>
     <a href="codigo.php?paginaPHP=<?$pagina = basename($_SERVER['SCRIPT_FILENAME']);echo $pagina;?>">Ver el codigo</a>
