@@ -19,10 +19,12 @@
             // {
             //     p("El formulario ha sido enviado");
             // }
-          /*  if(isset($_POST['Enviado'])){
+            if(isset($_POST['Enviado'])){
                 p("El formulario ha sido enviado");
                 if(!empty($_POST['nombre'])){
                     p("El nombre es ".$_POST['nombre']);
+                }else{
+
                 }
                 if(!empty($_POST['pass'])){
                     p("La contraseña es ".$_POST['pass']);
@@ -49,15 +51,27 @@
                     p("Error");
                 }
                 }
-            }*/
-
+            }
+/*
             if(isset($_POST['Enviado'])){
                 p("Has puesto todo correcto");
-            }else{
+            }else{*/
         ?>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="formulario" enctype="multipart/form-data">
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" name="nombre" id="nombre" value="<?php
+                if(isset($_POST['Enviado']) && !empty($_POST['nombre'])){
+                  echo $_POST['nombre'];
+                }
+            ?>
+                
+            ">
+            <?php
+                if(isset($_POST['Enviado'])&&empty($_POST['nombre'])){?>
+                    <label for="nombre" style="color:red;">Debe haber un nombre</label>
+            <?php }
+
+            ?>    
             <br>
             <label for="pass">Contraseña</label>
             <input type="password" name="pass" id="pass">
@@ -89,7 +103,7 @@
             <input type="reset" value="Limpiar">
         </form>
         <?php
-            }
+          //  }
         ?>
     </main>
     <br>
