@@ -52,6 +52,7 @@
                 <option value="combo1">combo1</option>
                 <option value="combo2">combo2</option>
             </select>
+            <?php incompletoCombo();?>
             <br>
             <label>Elige al menos 1 y maximo 3: </label>
             <br>
