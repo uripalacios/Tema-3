@@ -11,6 +11,13 @@
     <header>
         <h1>Formulario de Registro</h1>        
     </header>
+    <?php
+        require_once("./formulasFormularios.php");
+
+        if(validaFormulario()){
+            p("Has puesto todo correcto");
+        }else{
+    ?>
     <main>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="formulario" enctype="multipart/form-data">
             <label for="alfabetico">Alfabetico</label>
@@ -73,6 +80,11 @@
             <input type="file" name="archivo" id="archivo">
             <br>
             <br>
-            <input type="submit" value="Enviar" class="btn btn-danger">
+            <input type="submit" value="Enviar" class="btn btn-danger" name="Enviado">
         </form>
-    </main>    
+        <?php
+        }
+        ?>
+    </main>
+</body>    
+    
