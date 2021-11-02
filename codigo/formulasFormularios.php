@@ -9,12 +9,8 @@ function validaFormulario(){
 
         compruebaRadio();
         
-        // if(isset($_POST['genero'])){
-        //     p("Ha pulsado el genero ".$_POST['genero']);
-        // }
-        // if($_POST['ciclo']=="no"){
-        //     p("Debe seleccionar un ciclo");
-        // }
+        
+        
         // if(!isset($_POST['aficiones'])){
         //     p("No ha elegido ninguna aficion");
         // }elseif(count($_POST['aficiones'])>3){
