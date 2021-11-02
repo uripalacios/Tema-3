@@ -61,6 +61,12 @@ function guardaAlfanumerico(){
       }
 }
 
+function guardaTelefono(){
+    if(isset($_POST['Enviado']) && !empty($_POST['telefono'])){
+        echo $_POST['telefono'];
+      }
+}
+
 function incompletoAlfanumerico(){
     if(isset($_POST['Enviado'])&&empty($_POST['alfanumerico'])){
         echo "<label for='alfanumerico' style='color:red;'>Debe introducir un apellido</label>";
