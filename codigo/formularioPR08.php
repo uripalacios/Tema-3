@@ -21,19 +21,21 @@
     <main>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="formulario" enctype="multipart/form-data">
             <label for="alfabetico">Alfabetico</label>
-            <input type="text" name="alfabetico" id="alfabetico" placeholder="Nombre">
+            <input type="text" name="alfabetico" id="alfabetico" placeholder="Nombre" value="<?php guardaAlfabetico();?>">
+            <?php incompletoAlfabetico();?>
             <br>
             <label for="alfabeticoOpcional">Alfabetico Opcional</label>
             <input type="text" name="alfabeticoOpcional" id="alfabeticoOpcional" placeholder="Nombre">
             <br>
             <label for="alfanumerico">Alfanumerico</label>
-            <input type="text" name="alfanumerico" id="alfanumerico" placeholder="Apellido">
+            <input type="text" name="alfanumerico" id="alfanumerico" placeholder="Apellido" value="<?php guardaAlfanumerico();?>">
+            <?php incompletoAlfanumerico();?>
             <br>
             <label for="alfanumericoOpcional">Alfanumerico Opcional</label>
             <input type="text" name="alfanumericoOpcional" id="alfanumericoOpcional" placeholder="Apellido">
             <br>
             <label for="fecha">Fecha</label>
-            <input type="date" name="fecha" id="fecha">
+            <input type="date" name="fecha" id="fecha" value="<?php ?>">
             <br>
             <label for="fechaOpcional">Fecha Opcional</label>
             <input type="date" name="fechaOpcional" id="fechaOpcional">
