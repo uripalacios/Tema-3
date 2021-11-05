@@ -151,10 +151,10 @@
             br();
 
             p("Para sustituir[0-9] y [a-z]");
-            // d cualquier numero
-            // D cualquier letra
+            // \d cualquier numero
+            // \D cualquier letra
 
-            $exp = '/D/';
+            $exp = '/\D/';
             echo preg_match($exp,"1");
             br();
             echo preg_match($exp,"b3");            
