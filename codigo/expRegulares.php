@@ -98,6 +98,69 @@
             echo preg_match($exp,"logs");
             br();
 
+            p("Buscar cualquiera de las etiquetas de cierre html");
+            //tambien se podria hacer de la siguiente manera con conjuntos
+            $exp = '/<\/([a-z][0-9])+>/';
+            $exp = '/<\/(.)+>/';//la "\" es para decir que es caractar especial y no nos cierre antes de tiempo el contenido a buscar
+            //tambien se podria hacer de la siguiente manera con conjuntos
+            //$exp = '/<\/([a-z][0-9])+>/';
+            //coincidencia de patron.
+            echo preg_match($exp,"<h1>Tema 3</h1>");
+            br();
+
+            p("Buscar cualquiera de las etiquetas de cierre html y mostrarlas en array");
+            $exp = '/<\/([a-z]+[0-9]?)+>/';
+            //la primera parte del array no sabemos porque devuelve eso lo explica el proximo dia
+            //en la segunda se muestra las coincidencias con el patron
+            preg_match_all($exp,
+            "<h1>Tema 3</h1>
+            <p>Tema 3</p>
+            <i>Tema 3</i>
+            <p>Tema 3</p>",
+            $array);
+            echo "<pre>";
+            print_r($array);
+            echo "</pre>";
+            br();
+
+            p("buscar coincidencias y cuales son");
+            $exp = '/a./';
+            preg_match_all($exp,"abc aj al",
+            $array);
+            echo "<pre>";
+            print_r($array);
+            echo "</pre>";
+            br();
+
+            p("Numero de cuenta valido");
+            //con los corchetes expecificamos el numero de numeros en este caso que 
+            //obligatoriamente tiene que tener
+            $exp = '/^ES[0-9]{2}\s[0-9]{4}\s[0-9]{4}\s[0-9]{2}\s[0-9]{10}/';
+            echo preg_match($exp,"ES87 4251 3285 21 1324567895");
+            br();
+            echo preg_match($exp,"ES87 4251 3285 2851 1324567895");            
+            br();
+
+            p("Numeros validos desde el 0 al 999");
+            $exp = '/^[0-9]{1,3}$/';
+            echo preg_match($exp,"9999");
+            br();
+            echo preg_match($exp,"99");            
+            br();
+            echo preg_match($exp,"");            
+            br();
+
+            p("Para sustituir[0-9] y [a-z]");
+            // d cualquier numero
+            // D cualquier letra
+
+            $exp = '/D/';
+            echo preg_match($exp,"1");
+            br();
+            echo preg_match($exp,"b3");            
+            br();
+            echo preg_match($exp,"1B");            
+            br();
         ?>
     </main>
     <br>
