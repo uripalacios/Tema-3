@@ -12,7 +12,9 @@
             <h1>Ficheros</h1>        
         </header>
         <main>
-            
+            <form action="EligeFichero.php" method="post">
+                
+            </form>
         </main>
         <?php
 
