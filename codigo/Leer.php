@@ -9,26 +9,28 @@
     </head>
     <body>
         <header>
-            <h1>Ficheros</h1>        
+            <h1>Lectura</h1>        
         </header>
         <main>
             <form action="EligeFichero.php" method="post">
-                <label for="fi">Fichero:</label>
-                <input type="text" name="fi" id="fi">
-                <input type="submit" name="boton" value="Editar">
-                <input type="submit" name="boton" value="Leer">
+                <input type="hidden" name="">
+                <label for="fi">Contenido de fichero:</label>    
+                <br>            
+                <textarea name="fi" id="fi" cols="30" rows="10"></textarea>
+                <br>
+                <input type="submit" name="boton" value="Modificar">                
             </form>
         </main>
         <?php
 
-            if(sizeof($_REQUEST) > 0){
+       /*     if(sizeof($_REQUEST) > 0){
                 if($_REQUEST['boton'] == 'Editar'){
                     header('Location: Editar.php?fi='.$_REQUEST['fi']);
                 }
                 if($_REQUEST['boton'] == 'Leer'){
                     header('Location: Leer.php?fi='.$_REQUEST['fi']);
                 }
-            }
+            }*/
         ?>
     </body> 
 </html> 
