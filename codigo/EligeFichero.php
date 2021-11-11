@@ -13,11 +13,21 @@
         </header>
         <main>
             <form action="EligeFichero.php" method="post">
-                
+                <label for="fi">Fichero:</label>
+                <input type="text" name="fi" id="fi">
+                <input type="submit" name="boton" value="Editar">
+                <input type="submit" name="boton" value="Leer">
             </form>
         </main>
         <?php
-
+            if(sizeof($_REQUEST) > 0){
+                if($_REQUEST['boton'] == 'Editar'){
+                    header('Location: Editar.php?fi='.$_REQUEST['fi']);
+                }
+                if($_REQUEST['boton'] == 'Leer'){
+                    header('Location: Leer.php?fi='.$_REQUEST['fi']);
+                }
+            }
         ?>
     </body> 
 </html> 
