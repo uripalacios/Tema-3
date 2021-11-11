@@ -26,10 +26,10 @@
 
             if(sizeof($_REQUEST) > 0){
                 if($_REQUEST['boton'] == 'Editar'){
-                    header('Location: Editar.php?');
+                    header('Location: Editar.php');
                 }
                 if($_REQUEST['boton'] == 'Elige Fichero'){
-                    header('Location: Leer.php?');
+                    header('Location: Leer.php');
                 }
             }
         ?>
