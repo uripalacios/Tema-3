@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <h1>Ficheros</h1>        
+            <h1>Elige fichero</h1>        
         </header>
         <main>
             <form action="EligeFichero.php" method="post">

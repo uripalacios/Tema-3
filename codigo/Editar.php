@@ -19,19 +19,14 @@
                 <textarea name="fi" id="fi" cols="30" rows="10"></textarea>
                 <br>
                 <input type="submit" name="boton" value="Editar">
-                <input type="submit" name="boton" value="Elige Fichero">                
+                <a href="EligeFichero.php">Volver</a>                
             </form>
         </main>
         <?php
 
-            if(sizeof($_REQUEST) > 0){
-                if($_REQUEST['boton'] == 'Editar'){
-                    header('Location: Editar.php');
-                }
-                if($_REQUEST['boton'] == 'Elige Fichero'){
-                    header('Location: Leer.php');
-                }
-            }
+            // if($_REQUEST['boton'] == 'Editar'){
+            //     header('Location: Editar.php');
+            // }  
         ?>
     </body> 
 </html> 
