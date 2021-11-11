@@ -20,7 +20,10 @@
             </form>
         </main>
         <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> c85aeef71650ba1c1ba0ba84cc7ef09b3af61271
             if(sizeof($_REQUEST) > 0){
                 if($_REQUEST['boton'] == 'Editar'){
                     header('Location: Editar.php?fi='.$_REQUEST['fi']);
