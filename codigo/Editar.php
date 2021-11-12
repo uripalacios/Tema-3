@@ -16,13 +16,34 @@
                 <input type="hidden" name="">
                 <label for="fi">Contenido de fichero:</label>    
                 <br>            
-                <textarea name="fi" id="fi" cols="30" rows="10"></textarea>
+                <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
                 <br>
                 <input type="submit" name="boton" value="Editar">
                 <a href="EligeFichero.php">Volver</a>                
             </form>
         </main>
         <?php
+            $rutaArchivo = "./ficheros/".$_REQUEST['fi'];
+            $rutaficheroTemp = "./ficheros/temp.txt";
+            $ftemp = $_REQUEST['texto'];
+
+            if(!$finicial = fopen($rutaArchivo,'r'))
+            {
+                echo "Ha habido un error al abrir el fichero";
+                exit;
+            }
+
+            if(!$ftemp = fopen($rutaficheroTemp,'w'))
+            {
+                echo "Ha habido un error al abrir el fichero";
+                exit;
+            }
+
+            fclose($finicial);
+            fclose($ftemp);
+            
+            unlink($rutaArchivo);//borrar archivo
+            rename($rutaficheroTemp,$rutaArchivo);
 
             // if($_REQUEST['boton'] == 'Editar'){
             //     header('Location: Editar.php');
