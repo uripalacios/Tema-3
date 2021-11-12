@@ -13,10 +13,10 @@
         </header>
         <main>
             <form action="EligeFichero.php" method="post">
-                <input type="hidden" name="">
+                <input type="hidden" name="fi" value="<?php echo $_REQUEST['fi']?>">
                 <label for="fi">Contenido de fichero:</label>    
                 <br>            
-                <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+                <textarea name="texto" id="texto" cols="30" rows="10" value=""></textarea>
                 <br>
                 <input type="submit" name="boton" value="Editar">
                 <a href="EligeFichero.php">Volver</a>                
@@ -26,6 +26,7 @@
             $rutaArchivo = "./ficheros/".$_REQUEST['fi'];
             $rutaficheroTemp = "./ficheros/temp.txt";
             $ftemp = $_REQUEST['texto'];
+            fwrite($rutaficheroTemp,$ftemp,strlen($ftemp));
 
             if(!$finicial = fopen($rutaArchivo,'r'))
             {

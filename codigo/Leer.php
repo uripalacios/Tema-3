@@ -22,6 +22,7 @@
             </form>
         </main>
         <?php
+        
 
        /*     if(sizeof($_REQUEST) > 0){
                 if($_REQUEST['boton'] == 'Editar'){
