@@ -23,7 +23,7 @@
                     if($hijos->nodeValue == "Tenis"){
                         $aux = $hijos;
                         do
-                            $aux = $aux->nextSibling;
+                            $aux = $aux->nextSibling->nextSibling;
                         while (!$aux->nodeName == "Jugadores");   
                         $aux->nodeValue = 2;
                     }
