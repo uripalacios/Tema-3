@@ -5,6 +5,7 @@
     <Jugadores>11</Jugadores>
   </Deporte>
   <Deporte>
-    <Nombre>Tenis</Nombre>2<Jugadores>2</Jugadores>
+    <Nombre>Tenis</Nombre>
+    <Jugadores>2</Jugadores>
   </Deporte>
 </Deportes>
