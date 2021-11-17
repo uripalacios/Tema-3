@@ -20,6 +20,7 @@
             $aux = $aux->nextSibling;
         while ($aux->nodeName != "Jugadores");   
         $aux->nodeValue = 1;
+        $aux->setAttribute("Modificado","True");
        }
     }
 

@@ -6,6 +6,6 @@
   </Deporte>
   <Deporte>
     <Nombre>Tenis</Nombre>
-    <Jugadores>1</Jugadores>
+    <Jugadores Modificado="True">1</Jugadores>
   </Deporte>
 </Deportes>
