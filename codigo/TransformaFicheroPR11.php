@@ -13,9 +13,20 @@
     //guardo el contenido de fichero en una variable
     $contenidoFichero = fread($fp,filesize($rutaFicheroCsv));
 
-    //Guardo en una array el contenido del fichero 
-    $datosCsvArray = explode(";",$contenidoFichero);
+    //lo separo por un salto de linea los diferentes alumnos
+    $contenidoFichero = str_replace("\n","<br>",$contenidoFichero);
 
+    //echo $contenidoFichero;
+    
+    $alumnosArray= array();
+    $alumnosArray = explode("<br>",$contenidoFichero);
+
+    print_r ($alumnosArray);
+
+    //Guardo en una array el contenido del fichero
+    $datosCsvArray = array(); 
+    $datosCsvArray = explode(";",$contenidoFichero);
+/*
     //Comienzo a crear el xml
     $XML = new DOMDocument("1.0","utf-8");
     $XML->formatOutput = true;
@@ -29,5 +40,5 @@
         
     }
     
-    $XML->save("./ficheros/notas.xml");
+    $XML->save("./ficheros/notas.xml");*/
 ?>
