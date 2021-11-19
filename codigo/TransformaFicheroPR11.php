@@ -29,4 +29,5 @@
         
     }
     
+    $XML->save("./ficheros/notas.xml");
 ?>
