@@ -9,7 +9,7 @@
     <!-- Enlace al css -->
     <link rel="stylesheet" href="../webroot/css/style.css">
 
-    <!-- @author - Ismael Maestre Carracedo  -->
+    
 </head>
 <body>
     <h1>Formulario</h1>
